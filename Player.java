@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Player extends Actor{
-    int thisLevel = 1;
+    int thisLevel = 0;   //defalt = 1
     int onTheGround = 1;
     int vx = 0;
     int vy = 0;
@@ -181,7 +181,7 @@ public class Player extends Actor{
     
     public void checkNextLevel(){
         Level world =(Level) getWorld();
-        if(getX() >= world.getWidth() - 1){   
+        if(getX() >= world.getWidth() - 1 && thisLevel != 0){   
             thisLevel++;
             addNewWorld(thisLevel);
         }
@@ -190,6 +190,9 @@ public class Player extends Actor{
     public void addNewWorld(int levelNum){
         Level world =(Level) getWorld();
         switch(levelNum){
+            case(0):
+                Greenfoot.setWorld(new LevelEditor());
+                break;
             case(1):
                 Greenfoot.setWorld(new Level1(world.animal, 100, 10, 1)); 
                 break;
