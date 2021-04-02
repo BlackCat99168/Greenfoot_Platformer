@@ -19,7 +19,7 @@ public class Start extends World{
     }
 
     public void act(){
-        Greenfoot.setWorld(new Level1(1, 100, 10, 1));
+        Greenfoot.setWorld(new Level1(1, 1, 100, 10, 1, 0));
     }
 
     /**

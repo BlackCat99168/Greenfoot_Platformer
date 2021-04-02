@@ -17,6 +17,7 @@ public class Cat extends Player{
         move();
         useMagic();
         checkEnemy();      
+        checkCoin();
         checkFall();
         checkDeath();
         checkNextLevel();

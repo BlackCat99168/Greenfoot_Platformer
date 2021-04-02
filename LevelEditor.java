@@ -39,5 +39,17 @@ public class LevelEditor extends Level{
         addObject(ground4,368,286);
         Cat cat = new Cat();
         addObject(cat,94,412);
+        CoinScoreboard coinScoreboard = new CoinScoreboard();
+        addObject(coinScoreboard,121,549);
+        Coin coin = new Coin();
+        addObject(coin,329,256);
+        Coin coin2 = new Coin();
+        addObject(coin2,72,338);
+        Coin coin3 = new Coin();
+        addObject(coin3,342,338);
+        Coin coin4 = new Coin();
+        addObject(coin4,324,443);
+        Coin coin5 = new Coin();
+        addObject(coin5,554,380);
     }
 }

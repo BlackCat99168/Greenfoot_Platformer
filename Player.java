@@ -7,7 +7,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Player extends Actor{
-    int thisLevel = 0;   //defalt = 1
     int onTheGround = 1;
     int vx = 0;
     int vy = 0;
@@ -158,11 +157,20 @@ public class Player extends Actor{
     public void checkEnemy(){
         Level world =(Level) getWorld();
         if(isTouching(Enemy.class) && damageCd == 0){
-            world.hp -= thisLevel+Greenfoot.getRandomNumber(8); 
+            world.hp -= world.thisLevel+Greenfoot.getRandomNumber(8); 
             damageCd += 5;
         }       
         if(damageCd > 0){
             damageCd -- ;
+        }
+    }
+    
+    public void checkCoin(){
+        if(isTouching(Coin.class)){
+            Actor touchedCoin = getOneIntersectingObject(Coin.class);
+            Level world =(Level) getWorld();
+            world.tmpCoin ++ ;
+            getWorld().removeObject(touchedCoin);
         }
     }
     
@@ -175,15 +183,18 @@ public class Player extends Actor{
     
     public void checkDeath(){
         Level world =(Level) getWorld();
-        if(world.hp <= 0)
-            addNewWorld(thisLevel);
+        if(world.hp <= 0){
+            world.tmpCoin = world.coin;
+            addNewWorld(world.thisLevel);           
+        }
     }
     
     public void checkNextLevel(){
         Level world =(Level) getWorld();
-        if(getX() >= world.getWidth() - 1 && thisLevel != 0){   
-            thisLevel++;
-            addNewWorld(thisLevel);
+        if(getX() >= world.getWidth() - 1 && world.thisLevel != 0){   
+            world.coin = world.tmpCoin;
+            world.thisLevel ++ ;
+            addNewWorld(world.thisLevel);
         }
     }
     
@@ -194,10 +205,10 @@ public class Player extends Actor{
                 Greenfoot.setWorld(new LevelEditor());
                 break;
             case(1):
-                Greenfoot.setWorld(new Level1(world.animal, 100, 10, 1)); 
+                Greenfoot.setWorld(new Level1(world.thisLevel, world.animal, world.maxHp, world.maxMp, world.mpRecovery, world.coin)); 
                 break;
             case(2):
-                Greenfoot.setWorld(new Level2(world.animal));
+                Greenfoot.setWorld(new Level2(world.thisLevel, world.animal, world.maxHp, world.maxMp, world.mpRecovery, world.coin));
                 break;
             default:
                 break;

@@ -12,12 +12,15 @@ public class Level1 extends Level
      * Constructor for objects of class Level1.
      * 
      */
-    public Level1(int animal0, int maxHp0, int maxMp0, int mpRecovery0)
+    public Level1(int level, int animal0, int maxHp0, int maxMp0, int mpRecovery0, int coin0)
     {
+        thisLevel = level;
         animal = animal0;
         maxHp = maxHp0;
         maxMp = maxMp0;
         mpRecovery = mpRecovery0;
+        coin = coin0;
+        tmpCoin = coin;
         prepare();
     }
 
@@ -47,6 +50,16 @@ public class Level1 extends Level
         addObject(hpScoreboard,47,31);
         MpScoreboard mpScoreboard = new MpScoreboard();
         addObject(mpScoreboard,47,60);
+        Coin coin = new Coin();
+        addObject(coin,213,353);
+        Coin coin2 = new Coin();
+        addObject(coin2,538,327);
+        Coin coin3 = new Coin();
+        addObject(coin3,199,228);
+        Coin coin4 = new Coin();
+        addObject(coin4,522,144);
+        CoinScoreboard coinScoreboard = new CoinScoreboard();
+        addObject(coinScoreboard,47,109);
     }
     
     public void act(){
