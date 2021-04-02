@@ -200,15 +200,22 @@ public class Player extends Actor{
     
     public void addNewWorld(int levelNum){
         Level world =(Level) getWorld();
+        int data[] = new int[6];
+        data[0] = world.thisLevel;
+        data[1] = world.animal;
+        data[2] = world.maxHp;
+        data[3] = world.maxMp;
+        data[4] = world.mpRecovery;
+        data[5] = world.coin;
         switch(levelNum){
             case(0):
                 Greenfoot.setWorld(new LevelEditor());
                 break;
             case(1):
-                Greenfoot.setWorld(new Level1(world.thisLevel, world.animal, world.maxHp, world.maxMp, world.mpRecovery, world.coin)); 
+                Greenfoot.setWorld(new Level1(data)); 
                 break;
             case(2):
-                Greenfoot.setWorld(new Level2(world.thisLevel, world.animal, world.maxHp, world.maxMp, world.mpRecovery, world.coin));
+                Greenfoot.setWorld(new Level2(data));
                 break;
             default:
                 break;

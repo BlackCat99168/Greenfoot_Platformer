@@ -12,14 +12,14 @@ public class Level1 extends Level
      * Constructor for objects of class Level1.
      * 
      */
-    public Level1(int level, int animal0, int maxHp0, int maxMp0, int mpRecovery0, int coin0)
+    public Level1(int data[])
     {
-        thisLevel = level;
-        animal = animal0;
-        maxHp = maxHp0;
-        maxMp = maxMp0;
-        mpRecovery = mpRecovery0;
-        coin = coin0;
+        thisLevel = data[0];
+        animal = data[1];
+        maxHp = data[2];
+        maxMp = data[3];
+        mpRecovery = data[4];
+        coin = data[5];
         tmpCoin = coin;
         prepare();
     }

@@ -8,14 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level2 extends Level
 {
-    public Level2(int level, int animal0, int maxHp0, int maxMp0, int mpRecovery0, int coin0)
+    public Level2(int data[])
     {
-        thisLevel = level;
-        animal = animal0;
-        maxHp = maxHp0;
-        maxMp = maxMp0;
-        mpRecovery = mpRecovery0;
-        coin = coin0;
+        thisLevel = data[0];
+        animal = data[1];
+        maxHp = data[2];
+        maxMp = data[3];
+        mpRecovery = data[4];
+        coin = data[5];
         tmpCoin = coin;
         prepare();
     }

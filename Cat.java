@@ -25,13 +25,13 @@ public class Cat extends Player{
     }   
     public void changeImage(){
         if(direction == 1){
-            if(((Level) getWorld()).clock % 2 == 0)
+            if(((Level) getWorld()).clock % 20 < 10)
                 realImage = new GreenfootImage("CatRight1.png");
             else
                 realImage = new GreenfootImage("CatRight2.png");
         }
         else{
-            if(((Level) getWorld()).clock % 2 == 0)
+            if(((Level) getWorld()).clock % 20 < 10)
                 realImage = new GreenfootImage("CatLeft1.png");
             else
                 realImage = new GreenfootImage("CatLeft2.png");
