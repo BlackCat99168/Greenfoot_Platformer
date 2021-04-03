@@ -217,6 +217,9 @@ public class Player extends Actor{
             case(2):
                 Greenfoot.setWorld(new Level2(data));
                 break;
+            case(3):
+                Greenfoot.setWorld(new StoreLevel(data));
+                break;
             default:
                 break;
         }

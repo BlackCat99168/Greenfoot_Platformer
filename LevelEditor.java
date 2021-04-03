@@ -36,9 +36,7 @@ public class LevelEditor extends Level{
         Wall wall = new Wall();
         addObject(wall,362,135);
         Ground ground4 = new Ground();
-        addObject(ground4,368,286);
-        Cat cat = new Cat();
-        addObject(cat,94,412);
+        addObject(ground4,368,286);   
         CoinScoreboard coinScoreboard = new CoinScoreboard();
         addObject(coinScoreboard,121,549);
         Coin coin = new Coin();
@@ -50,6 +48,10 @@ public class LevelEditor extends Level{
         Coin coin4 = new Coin();
         addObject(coin4,324,443);
         Coin coin5 = new Coin();
-        addObject(coin5,554,380);
+        addObject(coin5,554,380);       
+        Store store = new Store();
+        addObject(store,633,370);
+        Cat cat = new Cat();
+        addObject(cat,94,412);
     }
 }
