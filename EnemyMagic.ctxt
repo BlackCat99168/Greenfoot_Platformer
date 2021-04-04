@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=EnemyMagic
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ EnemyMagic\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=direction0
+comment1.target=EnemyMagic(int)
+comment2.params=direction0\ speed
+comment2.target=EnemyMagic(int,\ int)
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ move()
+comment5.params=
+comment5.target=void\ checkPlatform()
+numComments=6
