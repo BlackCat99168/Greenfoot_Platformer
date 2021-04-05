@@ -13,10 +13,10 @@ public class Cat extends Player{
     }
     public void act(){
         changeImage();
-        changeCollisionBox();
+        checkEnemy();
+        changeCollisionBox();       
         move();
-        useMagic();
-        checkEnemy();      
+        useMagic();             
         checkCoin();
         checkFall();
         checkDeath();

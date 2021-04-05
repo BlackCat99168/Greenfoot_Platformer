@@ -11,6 +11,7 @@ public class EnemyMagic extends Enemy
     int v = 4;
     int direction = 0;  //{0,1,2,3} = {上,下,左,右}
     int time = 0;
+    int dead = 0;
     public EnemyMagic(int direction0){  
         direction = direction0;
     }
@@ -22,8 +23,16 @@ public class EnemyMagic extends Enemy
     
     public void act(){
         move();
-        checkPlatform();
-        time += 1;
+        checkDeath();
+        if(dead != 1){            
+            checkPlatform();
+            time += 1;
+        }
+    }
+    
+    public void checkDeath(){
+        if(dead == 1)
+            getWorld().removeObject(this);
     }
     
     public void move(){
@@ -40,9 +49,14 @@ public class EnemyMagic extends Enemy
     }
     
     public void checkPlatform(){
-        if(isTouching(Platform.class)){
-            getWorld().removeObject(this);
-        }
+        if(isTouching(Platform.class))
+            dead = 1;
+        else if(isTouching(Player.class))
+            dead = 1;
+        else if(isAtEdge())
+            dead = 1;
+        else if(getY()>500)
+            dead = 1;
     }
     
 }

@@ -176,7 +176,7 @@ public class Player extends Actor{
     
     public void checkFall(){
         Level world =(Level) getWorld();
-        if(getY() >= world.getHeight() - 1){     
+        if(getY() >= world.getHeight() - 100){     
             world.hp -= 99999;
         }
     }
